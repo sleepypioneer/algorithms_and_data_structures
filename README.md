@@ -1,4 +1,4 @@
-# Algorithms and Data structure in Python
+# Algorithms and Data structure in Python 🐍
 
 Notes from [Algorithms and Data structures](https://www.udemy.com/course/algorithms-and-data-structures-in-python) Udemy course instructed by Balazs Holczer.
 The course covers the implementation of data structures and abstract data types such as Arrays, Linked Lists, Heaps, Stacks, Queues, Graphs, Binary Search Trees, Associatives Arrays, and Dictionaries in Python.
