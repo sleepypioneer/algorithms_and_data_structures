@@ -73,17 +73,20 @@ We assign a data structure (array) to every single vertex (node) in the graph th
 We construct VxV martix (M) wgere M[i][j] represents the edge weight going from i to j, where 0 represents no connection.
 
 
+```
 [A]----4---->[C]
  |
  2
  |
 [B]---3--->[D]
+```
 
-    A   B   C   D
-A   0   2   4   0
-B   0   0   0   3
-C   0   0   0   0
-D   0   0   0   0
+|    |A   |B   |C   |D|
+|----|----|----|----|-|
+|A   |0   |2   |4   |0|
+|B   |0   |0   |0   |3|
+|C   |0   |0   |0   |0|
+|D   |0   |0   |0   |0|
 
 *Undirected graphs have symmetric adjacency matrices*
 
