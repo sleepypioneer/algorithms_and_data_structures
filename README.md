@@ -132,12 +132,29 @@ Underlying data structure is a queue, we add nodes to it and dequeue them once w
 
 ### Web crawlers
 
-A web crawler may acquire important paramters of the web such as page rank (importance of a page)
+A web crawler may acquire important parameters of the web such as page rank (importance of a page)
 It can also allow us to learn about the topology and degree of distribution of complex networks (such as popularity of a person on a social network)
 
 [Web crawler implementation](implementations/webcrawler.py)
 
-## Depth First Search (BFS)
+### Maze Solver with BFS
+Design an algorithms with breadth-first search that is able to find the shortest path from a given source to a given destination.
+The maze is represented by a two-dimensional list.
+The (0,0) is the source and (4,4) is the destination. 0 represents walls or obstacles and 1 is the valid cells we can include in the solution.
+
+```
+[
+   [S, 1, 1, 1, 1],
+   [0, 1, 1, 1, 1],
+   [0, 0, 0, 0, 1],
+   [1, 0, 1, 1, 1],
+   [0, 0, 0, 1, D]
+]
+```
+
+[maze solver solution](implementations/maze_solution.py)
+
+## Depth First Search (DFS)
 
 - strategy for solving mazes
 - traverses as far as possible along each branch before backtracking (BFS is a layer by layer algorithm)
@@ -151,9 +168,21 @@ Underlying data structure is a stack, we make use here of LIFO data structure.
 ### Applications
 
 * Topological ordering
-* Find strongly connected components in a graph (important for reccomendation systems)
+* Find strongly connected components in a graph (important for recommendation systems)
 * Detecting cycles
 * Generate maze or find way out of a maze
 
 [Implementation](implementations/dfs.py)
 
+
+## The Shortest Path problem
+
+### Dijkstra's Algorithm
+
+Dijkstra's algorithm is popular for the shortest path problem as it can find the shortest path incredibly quickly but is also able to construct the shortest path tree.
+The shortest path tree defines the shortest paths form a source to all the other nodes.
+It's running time complexity is O(VlogV + E).
+It is however a greedy approach - the more memory the faster it gets
+The appropriate underlying data structure is a priority queue (heap).
+
+[Implementation](implementations/dijkstra_algorithm.py)
