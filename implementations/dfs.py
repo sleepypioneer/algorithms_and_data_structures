@@ -29,7 +29,6 @@ def depth_first_search(start_node):
                 stack.append(n)
 
 
-
 # create nodes
 node1 = Node("A")
 node2 = Node("B")
@@ -45,3 +44,49 @@ node4.adjacency_list.append(node5)
 
 # run BFS
 depth_first_search(node1)
+
+# reset nodes visited value
+node1.visited = False
+node2.visited = False
+node3.visited = False
+node4.visited = False
+node5.visited = False
+
+
+def depth_first_search_recursion(nodes):
+    if not nodes:
+        return
+
+    actual_node = nodes.pop()
+    actual_node.visited = True
+    print(actual_node.name)
+
+    for n in actual_node.adjacency_list:
+        # avoid revisiting node
+        if not n.visited:
+            nodes.append(n)
+
+    depth_first_search_recursion(nodes)
+
+
+depth_first_search_recursion([node1])
+
+
+# reset nodes visited value
+node1.visited = False
+node2.visited = False
+node3.visited = False
+node4.visited = False
+node5.visited = False
+
+
+def dfs_recursion(node):
+    node.visited = True
+    print(node.name)
+
+    for n in node.adjacency_list:
+        if not n.visited:
+            dfs_recursion(n)
+
+
+dfs_recursion(node1)

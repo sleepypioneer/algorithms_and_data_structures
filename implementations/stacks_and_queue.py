@@ -49,6 +49,7 @@ Recursion:
 - Can risk stack overflow if there are too many function calls to be pushed onto the stack
 """
 
+
 class Stack:
 
     def __init__(self):
@@ -89,6 +90,7 @@ class Stack:
     def stack_size(self):
         return len(self.stack)
 
+
 stack = Stack()
 stack.push(1)
 stack.push(2)
@@ -112,6 +114,7 @@ Applications:
     - When data is transferred asynchronously for example IO buffers
     - Operational research applications or stochastic models
 """
+
 
 class Queue:
 

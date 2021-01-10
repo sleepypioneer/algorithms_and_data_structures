@@ -149,7 +149,7 @@ class MaxHeap:
         # of course we don't want to swap the given index with it's self
         if index != index_largest:
             self.swap(index, index_largest)
-            self.fix_down((index_largest))
+            self.fix_down(index_largest)
 
     def swap(self, index1, index2):
         self.heap[index2], self.heap[index1] = self.heap[index1], self.heap[index2]

@@ -1,6 +1,7 @@
 import requests
 import re
 
+
 class WebCrawler:
 
     def __init__(self):
@@ -25,10 +26,11 @@ class WebCrawler:
 
             for link in self.get_links_from_html(raw_html):
                 if link not in self.discovered_websites:
-                    self.discovered_websites.append(link) 
+                    self.discovered_websites.append(link)
                     queue.append(link)
 
-    def read_raw_html(self, url):
+    @staticmethod
+    def read_raw_html(url):
         """
         return parsed HTML content
         """
@@ -42,7 +44,8 @@ class WebCrawler:
 
         return raw_html
 
-    def get_links_from_html(self, raw_html):
+    @staticmethod
+    def get_links_from_html(raw_html):
         """
         return links found inside HTML
         """
@@ -50,7 +53,6 @@ class WebCrawler:
 
         print(f'{len(urls)} urls found on in raw html')
         return urls
-
 
 
 if __name__ == '__main__':

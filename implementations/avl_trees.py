@@ -86,6 +86,7 @@ Applications:
 
 """
 
+
 class Node:
 
     def __init__(self, data, parent):
@@ -103,7 +104,7 @@ class AVLTree:
 
     def remove(self, data):
         if self.root:
-            self.remove_node(data,self.root)
+            self.remove_node(data, self.root)
 
     def remove_node(self, data, node):
         if node is None:
@@ -214,7 +215,8 @@ class AVLTree:
 
         self.handle_violation(node)  # check if the tree has become unbalanced
 
-    def calculate_height(self, node):
+    @staticmethod
+    def calculate_height(node):
         if node is None:
             return -1
         return node.height
@@ -333,7 +335,7 @@ class AVLTree:
         # finally we have to update the height value
         node.height = max(self.calculate_height(node.leftChild), self.calculate_height(node.rightChild)) + 1
         temp_right_node.height = max(self.calculate_height(temp_right_node.leftChild),
-                                    self.calculate_height(temp_right_node.rightChild)) + 1
+                                     self.calculate_height(temp_right_node.rightChild)) + 1
 
     def traverse(self):
         if self.root is not None:
@@ -374,5 +376,3 @@ avl.insert(6)
 avl.remove(6)
 
 avl.traverse()
-
-

@@ -89,7 +89,7 @@ class RedBlackTree:
 
         # now we have to consider the right subtree
         if node.rightChild:
-            self.traverse_in_order((node.rightChild))
+            self.traverse_in_order(node.rightChild)
 
     def insert(self, data):
         if not self.root:
