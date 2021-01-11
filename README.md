@@ -175,14 +175,63 @@ Underlying data structure is a stack, we make use here of LIFO data structure.
 [Implementation](implementations/dfs.py)
 
 
-## The Shortest Path problem
-
-### Dijkstra's Algorithm
+## The Shortest Path problem and Dijkstra's Algorithm
 
 Dijkstra's algorithm is popular for the shortest path problem as it can find the shortest path incredibly quickly but is also able to construct the shortest path tree.
 The shortest path tree defines the shortest paths form a source to all the other nodes.
-It's running time complexity is O(VlogV + E).
+It's running time complexity is O(VlogV + E) with a priority queue and O(V*V+E) without
 It is however a greedy approach - the more memory the faster it gets
 The appropriate underlying data structure is a priority queue (heap).
 
-[Implementation](implementations/dijkstra_algorithm.py)
+[Implementation of dijstra's algorithm with adjacency list](implementations/dijkstra_algorithm.py)
+[Implementation of dijstra's algorithm with adjacency matrix](implementations/dijkstra_with_adjacency_matrix.py)
+
+### Applications
+
+- GPS and navigation
+- Routing information protocol
+- Image processing (shrinking)
+
+
+## The Longest Path problem
+
+NP-hard problem - no know polynomial running time algorithm
+but if G(V,E) is a directed acyclic graph (DAG) then we can solve it in linear running time
+We can change the longest path problem into the shortest path - negate the edge weights (multiply by -1)
+We have to use Bellman-Ford algorithm because Dijkstra's cannot handle the negative edges.
+
+### Critical path method (CPM)
+
+Came out of the Manhattan project, used for major skyscrapers.
+
+Algorithm requires:
+1) list of all activities required to complete the project
+2) the time (duration) that each activity will take to complete
+3) the dependencies between the activities
+
+From this we can construct an G(V,E) DAG. There are no cycles in such graphs.
+
+## Bellman-Ford Algorithm
+
+- Can work with negative edge weights
+- Slower than Dijkstra's algorithm but it is more robust
+- Running complexity O(V*E)
+- Makes v-1 iterations because the maximal length of the shortest path between vi and vj arbitrary nodes in a G(V,E) graph is |V|-1 (if there are no cycles)
+- If we make another iteration after V-1 and there is a change we can conclude there is a negative cycle 
+
+## Greedy approach and dynamic programing
+
+Greedy algorithm:   An algorithmic paradigm that constructs the final solution by choosing the best option possible in every iteration.
+                    It combined locally optimal solutions to get the global solution (final result).
+                    They are usually faster than dynamic approach.
+
+Dynamic algorithm:  An algorithmic paradigm that avoids recalculating the same problems over and over again
+                    It uses extra memory to store the sub-results.
+                    Main idea is to break down complicated problems in to sub-problems often in a recursive manner.
+                    We can apply dynamic programming when:
+                        1) optimal substructure
+                        2) overlapping sub-problems
+
+
+
+

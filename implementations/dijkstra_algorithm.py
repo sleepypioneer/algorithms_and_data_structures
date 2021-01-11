@@ -1,5 +1,6 @@
 import heapq
 
+
 class Edge:
 
     def __init__(self, weight, start_vertex, target_vertex):
